@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("/assets/fonts/Roboto-Light.ttf");
+}
+
+
+header{
+    width: 100%;
+    padding: 20px 0;
+    background-color:#B22222;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+header img {
+    max-height: 60px;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+header ul li a {
+    color: white;
+}
+
+li:not(:last-child) {
+    border-right-width: 1px;
+    border-right-color: rgb(255, 255, 255);
+    border-right-style: solid;
+}
+
+header ul li {
+    list-style-type: none;
+    padding : 0 35px;
+    color: white;
+    font-family: Roboto;
+    font-size: 20px;
+}
+/* 
+.logo{
+    max-width: 100%;
+	height: auto;
+}
+
+.leLogo{
+    max-width: 100%;o
+	height: 100%; */

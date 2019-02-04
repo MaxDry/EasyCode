@@ -1,0 +1,22 @@
+section.fond {
+    width: 100%;
+    height: 1000px;
+    background-image: url("../../assets/pictures/fondDuSite.jpg");
+    display: flex;
+    justify-content: center;
+    
+}
+
+section.fond.background-image {
+    filter: blur(5px);
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+}
+
+section.main {
+    height: 1000px;
+    width: 75%;
+    background-color: rgb(233, 233, 233);
+}
