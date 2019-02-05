@@ -12,7 +12,6 @@ import { GestionProjetComponent } from './gestion-projet/gestion-projet.componen
 import { IntegrationComponent } from './integration/integration.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
 import { AccueilComponent } from './accueil/accueil.component';
-import { FondSiteComponent } from './fond-site/fond-site.component';
 
 const appRoutes: Routes = [
   { path: '', component: AccueilComponent},
@@ -35,7 +34,6 @@ const appRoutes: Routes = [
     IntegrationComponent,
     PlaylistsComponent,
     AccueilComponent,
-    FondSiteComponent
   ],
   imports: [
     BrowserModule,

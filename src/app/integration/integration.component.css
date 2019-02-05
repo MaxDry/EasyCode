@@ -1,0 +1,11 @@
+section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 3% 0;
+    
+}
+
+section img {
+    max-height: 230px;
+}

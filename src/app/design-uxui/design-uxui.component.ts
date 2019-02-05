@@ -12,4 +12,6 @@ export class DesignUXUIComponent implements OnInit {
   ngOnInit() {
   }
 
+  imagesrc = "../../assets/pictures/ux-ui-logo.svg";
+
 }

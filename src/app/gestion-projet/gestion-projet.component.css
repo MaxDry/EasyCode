@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("/assets/fonts/Roboto-Light.ttf");
+}
+
+section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+    
+}
+
+section img {
+    max-height: 180px;
+}
+
+p {
+    font-size: 40px;
+    font-family: Roboto;
+    margin-left: 30px;
+}
+
+.textExplication {
+    font-size: 20px;
+}

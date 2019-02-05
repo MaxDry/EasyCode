@@ -12,4 +12,6 @@ export class IntegrationComponent implements OnInit {
   ngOnInit() {
   }
 
+  imagesrc = "../../assets/pictures/logoIntégration.png";
+
 }

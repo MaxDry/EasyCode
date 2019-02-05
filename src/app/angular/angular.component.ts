@@ -12,4 +12,6 @@ export class AngularComponent implements OnInit {
   ngOnInit() {
   }
 
+  imagesrc = "../../assets/pictures/logoAngular.png";
+
 }

@@ -1,0 +1,17 @@
+section.logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 4%;
+    color: red;
+    
+}
+
+section img {
+    max-height: 230px;
+}
+
+.textExplication {
+    padding: 0 4%;
+    font-size: 20px;
+}

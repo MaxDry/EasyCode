@@ -12,4 +12,6 @@ export class GestionProjetComponent implements OnInit {
   ngOnInit() {
   }
 
+  imagesrc = "../../assets/pictures/logoGestion.png";
+
 }

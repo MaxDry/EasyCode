@@ -1,8 +1,15 @@
 section {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 4%;
     
 }
 
 section img {
-    max-width: 30%;
+    max-height: 150px;
+}
+
+.textExplication {
+    font-size: 20px;
 }

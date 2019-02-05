@@ -1,0 +1,16 @@
+section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    
+}
+
+section img {
+    max-height: 230px;
+}
+
+.textExplication {
+    font-size: 20px;
+    padding: 2%;
+}
