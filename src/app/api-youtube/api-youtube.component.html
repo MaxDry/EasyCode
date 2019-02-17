@@ -1,0 +1,44 @@
+<div class="searchYoutubeDiv">
+  <div class="input-group">
+      <input #search type="text" class="form-control" placeholder="Rechercher" (keyup.enter)="getVideos(search.value)" >
+      <span class="input-group-btn">
+        <button class="btn btn-default" (click)="getVideos(search.value)" type="button"><i class="fas fa-search"></i></button>
+      </span>
+    </div>
+</div>
+
+<div class="paginationTop">
+  <button type="button" class="btn btn-light" (click)="getVideosPrev()">Précédent</button>
+  <button type="button" class="btn btn-light" (click)="getVideosNext()">Suivant</button>
+</div>
+<!-- <div class="row">
+  <div *ngFor="let video of videos" class="col-3" routerLink="/video/{{ video.id.videoId }}">
+      <div class="card">
+          <img class="card-img-top" [src]="video.snippet.thumbnails.high.url" alt="Card image cap">
+          <div class="card-body">
+              <h5 class="card-title">{{ video.snippet.title }}</h5>
+              <p class="card-text">{{ video.snippet.description }}</p>
+          </div>
+      </div>
+  </div>
+</div> -->
+<div class="row">
+  <div *ngFor="let video of videos" class="col-6" routerLink="/video/{{ video.id.videoId }}">
+    <div class="card">
+        <img class="card-img-top" [src]="video.snippet.thumbnails.high.url" alt="Card image cap">
+        <div class="card-header">
+            {{ video.snippet.title }}
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>{{ video.snippet.description }}</p>
+            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+          </blockquote>
+        </div>
+    </div>
+</div>
+
+ <div class="paginationBot">
+  <button type="button" class="btn btn-light" (click)="getVideosPrev()">Précédent</button>
+  <button type="button" class="btn btn-light" (click)="getVideosNext()">Suivant</button>
+</div> 

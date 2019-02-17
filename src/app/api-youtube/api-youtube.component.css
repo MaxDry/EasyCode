@@ -1,0 +1,18 @@
+.searchYoutubeDiv{
+    padding-bottom: 2%;
+}
+.paginationTop{
+    padding-bottom: 2%;
+
+}
+.paginationBot{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.card-img-top{
+    height: 500px;
+}
+
+.paginationTop:nth-child(2) {
+    text-align: right;
+}

@@ -12,6 +12,7 @@ import { GestionProjetComponent } from './gestion-projet/gestion-projet.componen
 import { IntegrationComponent } from './integration/integration.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { ApiYoutubeComponent } from './api-youtube/api-youtube.component';
 
 const appRoutes: Routes = [
   { path: '', component: AccueilComponent},
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
     IntegrationComponent,
     PlaylistsComponent,
     AccueilComponent,
+    ApiYoutubeComponent,
   ],
   imports: [
     BrowserModule,
