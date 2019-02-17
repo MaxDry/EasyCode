@@ -35,7 +35,7 @@ const appRoutes: Routes = [
     IntegrationComponent,
     PlaylistsComponent,
     AccueilComponent,
-    ApiYoutubeComponent,
+    ApiYoutubeComponent
   ],
   imports: [
     BrowserModule,
