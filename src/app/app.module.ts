@@ -18,7 +18,7 @@ const appRoutes: Routes = [
   { path: '', component: AccueilComponent},
   { path: 'angular', component: AngularComponent},
   { path: 'symfony', component: SymfonyComponent},
-  { path: 'designUX/UI', component: DesignUXUIComponent},
+  { path: 'designUXUI', component: DesignUXUIComponent},
   { path: 'gestionDeProjet', component: GestionProjetComponent},
   { path: 'integration', component: IntegrationComponent},
   { path: 'playlists', component: PlaylistsComponent},
