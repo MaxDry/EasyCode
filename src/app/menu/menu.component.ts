@@ -12,6 +12,6 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
-  imagesrc = "http://hopen-music.com/wp-content/uploads/2016/05/logo-blanc.png";
+  imagesrc = "../../assets/pictures/logo WC Menu.png";
 
 }
