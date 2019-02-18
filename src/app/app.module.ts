@@ -13,6 +13,7 @@ import { IntegrationComponent } from './integration/integration.component';
 import { PlaylistsComponent } from './playlists/playlists.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ApiYoutubeComponent } from './api-youtube/api-youtube.component';
+import { ApiYoutubeVideoComponent } from './api-youtube-video/api-youtube-video.component';
 
 const appRoutes: Routes = [
   { path: '', component: AccueilComponent},
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
     IntegrationComponent,
     PlaylistsComponent,
     AccueilComponent,
-    ApiYoutubeComponent
+    ApiYoutubeComponent,
+    ApiYoutubeVideoComponent
   ],
   imports: [
     BrowserModule,
