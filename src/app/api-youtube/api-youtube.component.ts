@@ -49,7 +49,7 @@ export class ApiYoutubeComponent implements OnInit {
         
         this.videos.forEach(element => {
           this.videoUrl = 'http://www.youtube.com/embed/' + element["id"]["videoId"] + '?enablejsapi=1&origin=http://example.com&rel=1';
-          this.publishedAt = element["snippet"]["publishedAt"];
+          element["snippet"]["publishedAt"] = element["snippet"]["publishedAt"];
           element['urlSecure'] = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoUrl);
         });
       });
