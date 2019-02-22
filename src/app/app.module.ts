@@ -14,6 +14,8 @@ import { PlaylistsComponent } from './playlists/playlists.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ApiYoutubeComponent } from './api-youtube/api-youtube.component';
 import { ApiYoutubeVideoComponent } from './api-youtube-video/api-youtube-video.component';
+import { SingleVideoYoutubeComponent } from './single-video-youtube/single-video-youtube.component';
+import { SearchbarVideoComponent } from './searchbar-video/searchbar-video.component';
 
 const appRoutes: Routes = [
   { path: '', component: AccueilComponent},
@@ -23,6 +25,7 @@ const appRoutes: Routes = [
   { path: 'gestionDeProjet', component: GestionProjetComponent},
   { path: 'integration', component: IntegrationComponent},
   { path: 'playlists', component: PlaylistsComponent},
+  { path: 'video/:id', component: SingleVideoYoutubeComponent},
 ]
 
 @NgModule({
@@ -37,7 +40,9 @@ const appRoutes: Routes = [
     PlaylistsComponent,
     AccueilComponent,
     ApiYoutubeComponent,
-    ApiYoutubeVideoComponent
+    ApiYoutubeVideoComponent,
+    SingleVideoYoutubeComponent,
+    SearchbarVideoComponent
   ],
   imports: [
     BrowserModule,
