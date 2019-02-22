@@ -12,6 +12,7 @@
 .card-img-top{
     height: 500px;
 }
-
-
+.card{
+    cursor: pointer;
+}
 
