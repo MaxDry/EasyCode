@@ -42,7 +42,8 @@ const appRoutes: Routes = [
     ApiYoutubeComponent,
     ApiYoutubeVideoComponent,
     SingleVideoYoutubeComponent,
-    SearchbarVideoComponent
+    SearchbarVideoComponent,
+    
   ],
   imports: [
     BrowserModule,

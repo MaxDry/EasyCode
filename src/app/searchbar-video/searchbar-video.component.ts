@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-searchbar-video',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchbarVideoComponent implements OnInit {
 
-  constructor() { }
+  @Input() searchVideo: string;
+  search = "";
+  imagesrc = "../../assets/pictures/logoSymfony.png";
+
+  myApiKey = "AIzaSyCyaZRe4xMnxqPdh9_fwuizP7bKTreyKNc";
+  urlListSymfony = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=Symfony+4&key="+ this.myApiKey;
+  videoUrl = "";
+  next = "";
+  publishedAt = "";
+  previous = "";
+  public videos = [];
+  constructor(private http: HttpClient,private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
+  
+      
+    
   }
+
+  
 
 }

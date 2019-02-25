@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AuthYoutubeService } from '../auth-youtube.service';
+import { SymfonyComponent } from '../symfony/symfony.component';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class ApiYoutubeComponent implements OnInit {
   
   @Input() searchVideo: string;
   search = "";
+
   imagesrc = "../../assets/pictures/logoSymfony.png";
 
   myApiKey = "AIzaSyCyaZRe4xMnxqPdh9_fwuizP7bKTreyKNc";
