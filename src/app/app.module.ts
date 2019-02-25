@@ -17,6 +17,7 @@ import { ApiYoutubeVideoComponent } from './api-youtube-video/api-youtube-video.
 import { SingleVideoYoutubeComponent } from './single-video-youtube/single-video-youtube.component';
 import { SearchbarVideoComponent } from './searchbar-video/searchbar-video.component';
 
+
 const appRoutes: Routes = [
   { path: '', component: AccueilComponent},
   { path: 'angular', component: AngularComponent},
