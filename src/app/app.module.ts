@@ -16,7 +16,7 @@ import { ApiYoutubeComponent } from './api-youtube/api-youtube.component';
 import { ApiYoutubeVideoComponent } from './api-youtube-video/api-youtube-video.component';
 import { SingleVideoYoutubeComponent } from './single-video-youtube/single-video-youtube.component';
 import { SearchbarVideoComponent } from './searchbar-video/searchbar-video.component';
-
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
   { path: '', component: AccueilComponent},
@@ -44,7 +44,7 @@ const appRoutes: Routes = [
     ApiYoutubeVideoComponent,
     SingleVideoYoutubeComponent,
     SearchbarVideoComponent,
-    
+    FooterComponent
   ],
   imports: [
     BrowserModule,
