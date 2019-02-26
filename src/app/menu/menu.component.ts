@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import GoogleUser = gapi.auth2.GoogleUser;
+import { AuthYoutubeService } from '../auth-youtube.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,11 +10,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+
+  private user: GoogleUser;
+  private userLogged = false;
+  imagesrc = "../../assets/pictures/logo WC Menu.png";
+
+  constructor(private youtubeAuth: AuthYoutubeService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  imagesrc = "../../assets/pictures/logo WC Menu.png";
+  signIn(){
+    const response = this.youtubeAuth.signIn();
+    response.subscribe((auth: GoogleUser) => {
+      auth.signIn()
+        .then(response => {
+          this.youtubeAuth.signInSuccess(response);
+          this.user = response;
+          if(response != undefined){
+            document.getElementById("lien-accueil").click();
+          }
+        }
+        );
+    });
+    
+  }
+
+  isLogged(){
+    this.user = this.youtubeAuth.getUser();
+    return this.youtubeAuth.isSignedIn();
+  }
+
+  
 
 }

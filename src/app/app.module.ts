@@ -17,6 +17,23 @@ import { ApiYoutubeVideoComponent } from './api-youtube-video/api-youtube-video.
 import { SingleVideoYoutubeComponent } from './single-video-youtube/single-video-youtube.component';
 import { SearchbarVideoComponent } from './searchbar-video/searchbar-video.component';
 import { FooterComponent } from './footer/footer.component';
+import {
+  GoogleApiModule, 
+  GoogleApiService, 
+  GoogleAuthService, 
+  NgGapiClientConfig, 
+  NG_GAPI_CONFIG,
+  GoogleApiConfig
+} from "ng-gapi";
+
+let gapiClientConfig: NgGapiClientConfig = {
+  client_id: "871157582032-n07vpulrmradumcoo4anvbnom7a6u6vo.apps.googleusercontent.com",
+  discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest"],
+  ux_mode: "popup",
+  scope: [
+      "https://www.googleapis.com/auth/youtube"
+  ].join(" ")
+};
 
 const appRoutes: Routes = [
   { path: '', component: AccueilComponent},
@@ -49,6 +66,10 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    GoogleApiModule.forRoot({
+      provide: NG_GAPI_CONFIG,
+      useValue: gapiClientConfig
+    }),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }
