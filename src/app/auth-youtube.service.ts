@@ -12,12 +12,10 @@ export class AuthYoutubeService {
 
   public static SESSION_STORAGE_KEY: string = 'accessToken';
   private user: GoogleUser;
-  apiKey = "AIzaSyCyaZRe4xMnxqPdh9_fwuizP7bKTreyKNc";
-  playlists;
-  videosPlaylists;
+  MyapiKey = "AIzaSyBvWTAjNGrTkCqKBwryv4LX4HkED7ia6ho";
 
   args = {
-    clientId: '238523767005-90jndv6p8oot3la91kv9u7kg9b3kaj2i.apps.googleusercontent.com',
+    clientId: '871157582032-n07vpulrmradumcoo4anvbnom7a6u6vo.apps.googleusercontent.com',
     discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'],
     scope: 'https://www.googleapis.com/auth/youtube.force-ssl',
     apiKey: "AIzaSyBQfBCA8tKpCL9uQsZNEjYFAGIcrMIh-ak"
@@ -31,10 +29,10 @@ export class AuthYoutubeService {
   
 
 
-  public signInSuccessHandler(res: GoogleUser) {
-    this.user = res;
+  public signInSuccess(response: GoogleUser) {
+    this.user = response;
     sessionStorage.setItem(
-      AuthYoutubeService.SESSION_STORAGE_KEY, res.getAuthResponse().access_token
+      AuthYoutubeService.SESSION_STORAGE_KEY, response.getAuthResponse().access_token
     );
   }
 

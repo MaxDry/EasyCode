@@ -20,15 +20,14 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
-  signin(){
+  signIn(){
     const response = this.youtubeAuth.signIn();
     response.subscribe((auth: GoogleUser) => {
       auth.signIn()
-        .then(res => {
-          console.log(res);
-          this.youtubeAuth.signInSuccessHandler(res);
-          this.user = res;
-          if(res != undefined){
+        .then(response => {
+          this.youtubeAuth.signInSuccess(response);
+          this.user = response;
+          if(response != undefined){
             document.getElementById("lien-accueil").click();
           }
         }

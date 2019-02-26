@@ -27,7 +27,7 @@ import {
 } from "ng-gapi";
 
 let gapiClientConfig: NgGapiClientConfig = {
-  client_id: "238523767005-90jndv6p8oot3la91kv9u7kg9b3kaj2i.apps.googleusercontent.com",
+  client_id: "871157582032-n07vpulrmradumcoo4anvbnom7a6u6vo.apps.googleusercontent.com",
   discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest"],
   ux_mode: "popup",
   scope: [

@@ -7,9 +7,9 @@
     <li><a routerLink="/gestionDeProjet" routerLinkActive="active">Gestion de projet</a></li>
     <li><a routerLink="/integration" routerLinkActive="active">Intégration</a></li>
     <li><a routerLink="/playlists" routerLinkActive="active">Playlists</a></li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link" (click)="signin()" *ngIf="!isLogged()">Connexion</a>
-    </li>
+    </li> -->
   </ul>
   <!-- <ul class="nav navbar-nav navbar-right">
     <li><a class="nav-link" href="#" (click)="signin()" *ngIf="!isLogged()"><i class="fas fa-user-alt"></i> Connexion</a></li>
@@ -29,8 +29,8 @@
             <a class="nav-link" href="#" (click)="disconnect()">Déconnexion</a>
           </div>
       </li>
-  </div> -->
-
-  <img class="account" [src]="imagesrc">
+    </div> -->
+    
+    <button class="nav-link" (click)="signIn()" *ngIf="!isLogged()">Connexion</button>
 </header>
 

@@ -13,3 +13,9 @@ section img {
 .textExplication {
     font-size: 20px;
 }
+
+@media (max-width: 576px) {
+    section img {
+        max-height: 70px;
+    }
+}
