@@ -1,5 +1,9 @@
+
 <header>
   <a routerLink="/" id="accueil" routerLinkActive="active"><img class="logo" [src]="imagesrc"></a>
+<header class="PcFirst">
+  <a routerLink="/" routerLinkActive="active"><img class="logo" [src]="imagesrc"></a>
+
   <ul>
     <li><a routerLink="/symfony" id="symfony" routerLinkActive="active" >Symfony 4</a></li>
     <li><a routerLink="/angular" id="angular" routerLinkActive="active">Angular</a></li>
@@ -33,4 +37,43 @@
   
     
 </header> 
+
+<header class="MobileFirst">
+  <nav role="navigation" class="menu-mobile">
+    <div id="menuToggle">
+      <!--
+      A fake / hidden checkbox is used as click reciever,
+      so you can use the :checked selector on it.
+      -->
+      <input type="checkbox" />
+      
+      <!--
+      Some spans to act as a hamburger.
+      
+      They are acting like a real hamburger,
+      not that McDonalds stuff.
+      -->
+      <span></span>
+      <span></span>
+      <span></span>
+      
+      <!--
+      Too bad the menu has to be inside of the button
+      but hey, it's pure CSS magic.
+      -->
+
+        <ul id="menu">
+          <a routerLink="/symfony" routerLinkActive="active"><li>Symfony</li></a>
+          <a routerLink="/angular" routerLinkActive="active"><li>Angular</li></a>
+          <a routerLink="/designUXUI" routerLinkActive="active"><li>Design UX/UI</li></a>
+          <a routerLink="/gestionDeProjet" routerLinkActive="active"><li>Gestion de projet</li></a>
+          <a routerLink="/integration" routerLinkActive="active"><li>Intégration</li></a>
+          <a routerLink="/playlists" routerLinkActive="active"><li>Playlists</li></a>
+        </ul>
+    </div>
+  </nav>
+    
+  <i class="fas fa-door-open fa-2x" id="icon" (click)="signIn()" *ngIf="!isLogged()"></i>
+</header>
+
 
