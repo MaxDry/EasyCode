@@ -1,6 +1,4 @@
 
-<header>
-  <a routerLink="/" id="accueil" routerLinkActive="active"><img class="logo" [src]="imagesrc"></a>
 <header class="PcFirst">
   <a routerLink="/" routerLinkActive="active"><img class="logo" [src]="imagesrc"></a>
 
@@ -29,13 +27,9 @@
     </li>
   </div>
     <div class="con">
-    <a class="nav-link" id="connexion" (click)="signIn()" *ngIf="!isLogged()"><i class="fas fa-user-circle"></i>Connexion</a>
+    <a class="nav-link" id="connexion" (click)="signIn()" *ngIf="!isLogged()"><i class="fas fa-user-circle fa-2x"></i>Connexion</a>
     </div>
 
-    
-   
-  
-    
 </header> 
 
 <header class="MobileFirst">
