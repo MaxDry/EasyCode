@@ -15,30 +15,35 @@ export class MenuComponent implements OnInit {
   private userLogged = false;
   imagesrc = "../../assets/pictures/logo WC Menu.png";
 
-  constructor(private youtubeAuth: AuthYoutubeService, private router: Router) { }
+  constructor(private authYoutube: AuthYoutubeService, private router: Router) { }
 
   ngOnInit() {
   }
 
   signIn(){
-    const response = this.youtubeAuth.signIn();
+    const response = this.authYoutube.signIn();
+    // console.log(response);
     response.subscribe((auth: GoogleUser) => {
-      auth.signIn()
-        .then(response => {
-          this.youtubeAuth.signInSuccess(response);
+      auth.signIn().then(response => {
+          this.authYoutube.signInSuccess(response);
           this.user = response;
+          console.log(this.user)
           if(response != undefined){
-            document.getElementById("lien-accueil").click();
+            document.getElementById("symfony").click();
+            
           }
         }
         );
     });
-    
+  }
+
+  disconnect(){
+    this.authYoutube.disconnect();
   }
 
   isLogged(){
-    this.user = this.youtubeAuth.getUser();
-    return this.youtubeAuth.isSignedIn();
+    this.user = this.authYoutube.getUser();
+    return this.authYoutube.isSignedIn();
   }
 
   

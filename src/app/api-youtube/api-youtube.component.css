@@ -16,3 +16,17 @@
     cursor: pointer;
 }
 
+.fas{
+    color: rgb(138, 24, 24);
+}
+.material-icons{
+    color: rgb(138, 24, 24);
+    font-size: 150%;
+    padding-top: 2%;
+}
+.card-header{
+    font-size: 1.5em;
+}
+.blockquote{
+    font-size: 1em;
+}

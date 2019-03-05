@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchbarVideoComponent } from './searchbar-video.component';
+import { ApiYoutubePlaylistComponent } from './api-youtube-playlist.component';
 
-describe('SearchbarVideoComponent', () => {
-  let component: SearchbarVideoComponent;
-  let fixture: ComponentFixture<SearchbarVideoComponent>;
+describe('ApiYoutubePlaylistComponent', () => {
+  let component: ApiYoutubePlaylistComponent;
+  let fixture: ComponentFixture<ApiYoutubePlaylistComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchbarVideoComponent ]
+      declarations: [ ApiYoutubePlaylistComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SearchbarVideoComponent);
+    fixture = TestBed.createComponent(ApiYoutubePlaylistComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

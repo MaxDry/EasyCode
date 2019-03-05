@@ -10,8 +10,8 @@ header{
     background-color:rgb(138, 24, 24);
     display: flex;
     justify-content: space-around;
+    
 }
-
 
 
 header img {
@@ -41,9 +41,36 @@ header ul li {
     color: white;
     font-family: Roboto;
     font-size: 23px;
+    cursor: pointer;
+}
+
+.dropdown-menu a{
+    color : black;
+}
+.con{
+    cursor: pointer;
+    font-family: Roboto;
+    display: flex;
+    align-items: center;
+    font-size: 23px;
+    padding : 0 35px;
+    color: white;
+}
+.con i{
+    padding-right: 5px;
+}
+.connected li{
+    list-style-type: none;
+    color: white;
+    /* padding : 0 35px; */
 }
 
 
+
+.imgUser{
+    border-radius: 50%;
+    margin-left: 1px;
+}
 /* 
 .logo{
     max-width: 100%;
