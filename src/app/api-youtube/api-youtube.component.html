@@ -1,12 +1,13 @@
 
- <!-- <div class="searchBar">
+ <div class="searchBar">
   <div class="input-group"> 
     <input #search type="text" class="form-control" placeholder="Rechercher" (keyup.enter)="getVideos(search.value)" >
     <span class="input-group-btn">
       <button class="btn btn-default" (click)="getVideos(search.value)" type="button"><i class="fas fa-search"></i></button>
     </span>
   </div>
-</div>  -->
+</div> 
+
 
 <div class="paginationTop">
   <button type="button" class="btn btn-light" (click)="getVideosPrev()">Précédent</button>
@@ -18,7 +19,7 @@
     <div class="card">
         <img class="card-img-top" [src]="video.snippet.thumbnails.high.url" alt="Card image cap">
         <div class="card-header">
-            {{ video.snippet.title }}
+            {{ video.snippet.title }} <br><i class="material-icons">playlist_add</i>
         </div>
         <div class="card-body">
           <blockquote class="blockquote mb-0">

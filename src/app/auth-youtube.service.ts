@@ -15,18 +15,30 @@ export class AuthYoutubeService {
   MyapiKey = "AIzaSyBvWTAjNGrTkCqKBwryv4LX4HkED7ia6ho";
 
   args = {
-    clientId: '871157582032-n07vpulrmradumcoo4anvbnom7a6u6vo.apps.googleusercontent.com',
+    clientId: '811511071865-rl28emob7o8m4q5aorm7v0ug64d39gck.apps.googleusercontent.com',
     discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'],
     scope: 'https://www.googleapis.com/auth/youtube.force-ssl',
-    apiKey: "AIzaSyBQfBCA8tKpCL9uQsZNEjYFAGIcrMIh-ak"
+    apiKey: "AIzaSyBvWTAjNGrTkCqKBwryv4LX4HkED7ia6ho"
   }
 
   constructor(private googleAuth: GoogleAuthService, private router: Router, private GoogleApi: GoogleApiService, private http: HttpClient) { }
 
   public signIn(): Observable<object> {
+    // On charge la librairie GoogleAuth 
     return this.googleAuth.getAuth();
   }
-  
+
+  public disconnect() {
+    this.user.disconnect();
+    AuthYoutubeService.SESSION_STORAGE_KEY = 'accessToken';
+    console.log("Déconnexion");
+  }
+
+  public getGoogleApiService(): Observable<void> {
+    // console.log("loading gapi");
+    // On charge la librairie GoogleApi
+    return this.GoogleApi.onLoad();
+  }
 
 
   public signInSuccess(response: GoogleUser) {
@@ -46,7 +58,6 @@ export class AuthYoutubeService {
     } else {
       return false;
     }
-
   }
 
 }
