@@ -10,12 +10,10 @@ import { SymfonyComponent } from './symfony/symfony.component';
 import { DesignUXUIComponent } from './design-uxui/design-uxui.component';
 import { GestionProjetComponent } from './gestion-projet/gestion-projet.component';
 import { IntegrationComponent } from './integration/integration.component';
-import { PlaylistsComponent } from './playlists/playlists.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ApiYoutubeComponent } from './api-youtube/api-youtube.component';
 import { ApiYoutubeVideoComponent } from './api-youtube-video/api-youtube-video.component';
 import { SingleVideoYoutubeComponent } from './single-video-youtube/single-video-youtube.component';
-import { SearchbarVideoComponent } from './searchbar-video/searchbar-video.component';
 import { FooterComponent } from './footer/footer.component';
 import {
   GoogleApiModule, 
@@ -25,6 +23,7 @@ import {
   NG_GAPI_CONFIG,
   GoogleApiConfig
 } from "ng-gapi";
+import { ApiYoutubePlaylistComponent } from './api-youtube-playlist/api-youtube-playlist.component';
 
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "871157582032-n07vpulrmradumcoo4anvbnom7a6u6vo.apps.googleusercontent.com",
@@ -42,7 +41,7 @@ const appRoutes: Routes = [
   { path: 'designUXUI', component: DesignUXUIComponent},
   { path: 'gestionDeProjet', component: GestionProjetComponent},
   { path: 'integration', component: IntegrationComponent},
-  { path: 'playlists', component: PlaylistsComponent},
+  { path: 'playlists', component: ApiYoutubePlaylistComponent},
   { path: 'video/:id', component: SingleVideoYoutubeComponent},
 ]
 
@@ -55,13 +54,12 @@ const appRoutes: Routes = [
     DesignUXUIComponent,
     GestionProjetComponent,
     IntegrationComponent,
-    PlaylistsComponent,
     AccueilComponent,
     ApiYoutubeComponent,
     ApiYoutubeVideoComponent,
     SingleVideoYoutubeComponent,
-    SearchbarVideoComponent,
-    FooterComponent
+    FooterComponent,
+    ApiYoutubePlaylistComponent
   ],
   imports: [
     BrowserModule,

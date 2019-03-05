@@ -2,7 +2,9 @@
     <div class="main">
       <iframe class="e2e-iframe-trusted-sr" width="1100" height="600" [src]="videoUrl"></iframe>
       <div class="counter">
-        <span>{{ video.statistics.viewCount }} vues</span>
+          <span>{{ video.statistics.viewCount }} vues</span>
+        <button type="button" class="btn btn-success" (click)="post(video.id, 'like')">{{ video.statistics.likeCount }} like(s)</button>
+        <button type="button" class="btn btn-danger" (click)="post(video.id, 'dislike')">{{ video.statistics.dislikeCount }} dislike(s)</button>      
       </div>
       <h5 class="card-title">{{ video.snippet.title }}</h5>
         <p class="card-text">{{ video.snippet.description }}</p>

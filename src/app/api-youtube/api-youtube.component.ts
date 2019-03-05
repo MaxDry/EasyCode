@@ -23,11 +23,10 @@ export class ApiYoutubeComponent implements OnInit {
   urlListSymfony = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=Symfony+4&key="+ this.myApiKey;
   videoUrl = "";
   next = "";
-  publishedAt = "";
   previous = "";
   public videos = [];
   
-  constructor(private route: ActivatedRoute, private http: HttpClient, private sanitizer: DomSanitizer, private authYoutube: AuthYoutubeService) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient, private sanitizer: DomSanitizer) { }
 
     ngOnInit() {
     // S'il y a un parametre de création de composant
@@ -40,6 +39,7 @@ export class ApiYoutubeComponent implements OnInit {
     }
   }
 
+  //get video by search by keyword
   public getVideos(varSearch: string){
     varSearch = varSearch.replace(" ", "%7C");
     this.search = varSearch;
@@ -51,7 +51,6 @@ export class ApiYoutubeComponent implements OnInit {
         
         this.videos.forEach(element => {
           this.videoUrl = 'http://www.youtube.com/embed/' + element["id"]["videoId"] + '?enablejsapi=1&origin=http://example.com&rel=1';
-          this.publishedAt = element["snippet"]["publishedAt"];
           element['urlSecure'] = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoUrl);
         });
       });

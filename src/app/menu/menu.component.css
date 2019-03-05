@@ -5,6 +5,7 @@
 
 @media (min-width: 361px) {
 
+
     header{
         width: 100%;
         padding: 20px 0;
@@ -111,6 +112,14 @@ a
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               opacity 0.55s ease;
+
+header{
+    width: 100%;
+    padding: 20px 0;
+    background-color:rgb(138, 24, 24);
+    display: flex;
+    justify-content: space-around;
+
 }
 
 #menuToggle span:first-child
@@ -132,6 +141,7 @@ a
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background : white;
+
 }
 
 /*
@@ -243,9 +253,43 @@ a
     #icon{
         color: rgb(240, 240, 240);
     }
+
+header ul li {
+    list-style-type: none;
+    padding : 0 35px;
+    color: white;
+    font-family: Roboto;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.dropdown-menu a{
+    color : black;
+}
+.con{
+    cursor: pointer;
+    font-family: Roboto;
+    display: flex;
+    align-items: center;
+    font-size: 23px;
+    padding : 0 35px;
+    color: white;
+}
+.con i{
+    padding-right: 5px;
+}
+.connected li{
+    list-style-type: none;
+    color: white;
+    /* padding : 0 35px; */
 }
 
 
+
+.imgUser{
+    border-radius: 50%;
+    margin-left: 1px;
+}
 /* 
 .logo{
     max-width: 100%;
