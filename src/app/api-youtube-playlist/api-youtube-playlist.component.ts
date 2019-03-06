@@ -8,8 +8,8 @@ import { Router } from "@angular/router"
   styleUrls: ['./api-youtube-playlist.component.css']
 })
 export class ApiYoutubePlaylistComponent implements OnInit {
-  playlistsUser;
-  constructor(private authYoutube: AuthYoutubeService, private router: Router) { }
+  playlist;
+  constructor(private router: Router, private authYoutube: AuthYoutubeService) { }
 
   ngOnInit() {
     this.getPlaylists();
@@ -17,8 +17,9 @@ export class ApiYoutubePlaylistComponent implements OnInit {
 
   getPlaylists() {
     this.authYoutube.getGoogleApiService().subscribe(() => {
+
     let that = this;  
-      console.log("subscribe passed");
+
       //  chargement librairie gapi.client
       gapi.load('client:auth2', {
         callback: function () {
@@ -42,13 +43,11 @@ export class ApiYoutubePlaylistComponent implements OnInit {
                 mine: true
               }
             }
+            
             gapi.client.request(data).then((response) => {
 
-              this.playlistsUser = response["result"]["items"];
-              if (that.playlistsUser != undefined) {
-                console.log(that.playlistsUser);
-              }
-
+              this.playlist = response["result"]["items"];
+              console.log(this.playlist);
             },
               (reason) => {
                 return reason;
@@ -60,7 +59,7 @@ export class ApiYoutubePlaylistComponent implements OnInit {
           // Handle loading error.
           alert('Erreur lors du chargement de gapi');
         },
-        timeout: 5000, // 5 seconds.
+        timeout: 5000, 
         ontimeout: function () {
           // Handle timeout.
           alert('gapi a mit trop de temps pour ce charger, temps dépassé');

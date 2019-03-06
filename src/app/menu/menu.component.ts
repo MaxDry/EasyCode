@@ -12,7 +12,6 @@ export class MenuComponent implements OnInit {
 
 
   private user: GoogleUser;
-  private userLogged = false;
   imagesrc = "../../assets/pictures/logo WC Menu.png";
 
   constructor(private authYoutube: AuthYoutubeService, private router: Router) { }

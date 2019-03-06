@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -24,6 +24,7 @@ import {
   GoogleApiConfig
 } from "ng-gapi";
 import { ApiYoutubePlaylistComponent } from './api-youtube-playlist/api-youtube-playlist.component';
+import { HttpErrorInterceptor } from './http-erreur.intercepteur.service';
 
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "871157582032-n07vpulrmradumcoo4anvbnom7a6u6vo.apps.googleusercontent.com",

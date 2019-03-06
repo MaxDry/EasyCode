@@ -3,20 +3,24 @@ import { AuthYoutubeService } from './../auth-youtube.service';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
-
+import GoogleUser = gapi.auth2.GoogleUser;
 
 @Component({
   selector: 'app-api-youtube-video',
   templateUrl: './api-youtube-video.component.html',
   styleUrls: ['./api-youtube-video.component.css']
 })
+
+
 export class ApiYoutubeVideoComponent implements OnInit {
 
+  
   myApiKey = "AIzaSyCyaZRe4xMnxqPdh9_fwuizP7bKTreyKNc";
   videoId = this.route.snapshot.paramMap.get('id');
   dangerousUrl = 'http://www.youtube.com/embed/' + this.videoId;
   videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.dangerousUrl);
   public videos = [];
+  private user: GoogleUser;
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private sanitizer: DomSanitizer,private authYoutube: AuthYoutubeService) {
    }
@@ -34,7 +38,7 @@ export class ApiYoutubeVideoComponent implements OnInit {
       });
   }
 
-  postRate(idVideo: string, type: string){
+  post(idVideo: string, type: string){
     console.log(idVideo);
     let args = {
       clientId: '238523767005-90jndv6p8oot3la91kv9u7kg9b3kaj2i.apps.googleusercontent.com',
@@ -51,12 +55,11 @@ export class ApiYoutubeVideoComponent implements OnInit {
           // On initialise gapi.client
           gapi.client.init(args).then(
             (value ) => {
-              console.log(value)
             },
             (reason ) => {
                console.log(reason) 
             }
-          );
+          )
           if (gapi.client != undefined) {
             console.log("Gapi has loaded !");
             var data = {
@@ -67,21 +70,26 @@ export class ApiYoutubeVideoComponent implements OnInit {
                 rating: type
               }
             }
-            gapi.client.request(data).then((response) => {
-              console.log(response);
-              
+            gapi.client.setApiKey(AuthYoutubeService.SESSION_STORAGE_KEY);
+            gapi.client.request(data).then(
+              (response) => {
+              alert('Vous avez aimez cette vidéo :' + response);
+
+
             },
             (reason) => {
+              alert('Erreur lors du like, veuillez réessayer');
               return reason;
             });
           }
+
 
         },
         onerror: function () {
           // Handle loading error.
           alert('gapi.client failed to load!');
         },
-        timeout: 5000, // 5 seconds.
+        timeout: 5000, 
         ontimeout: function () {
 
           // Handle timeout.
@@ -90,5 +98,10 @@ export class ApiYoutubeVideoComponent implements OnInit {
       });
     });
   }
+  isLogged(){
+    this.user = this.authYoutube.getUser();
+    return this.authYoutube.isSignedIn();
+  }
+
 
 }
