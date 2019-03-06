@@ -3,8 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AuthYoutubeService } from '../auth-youtube.service';
-import { SymfonyComponent } from '../symfony/symfony.component';
-
+import GoogleUser = gapi.auth2.GoogleUser;
 
 @Component({
   selector: 'app-api-youtube',
@@ -15,6 +14,7 @@ export class ApiYoutubeComponent implements OnInit {
 
   
   @Input() searchVideo: string;
+
   search = "";
 
   imagesrc = "../../assets/pictures/logoSymfony.png";
@@ -26,7 +26,7 @@ export class ApiYoutubeComponent implements OnInit {
   previous = "";
   public videos = [];
   
-  constructor(private route: ActivatedRoute, private http: HttpClient, private sanitizer: DomSanitizer) { }
+  constructor(private authYoutube: AuthYoutubeService,private route: ActivatedRoute, private http: HttpClient, private sanitizer: DomSanitizer) { }
 
     ngOnInit() {
     // S'il y a un parametre de création de composant
@@ -79,7 +79,5 @@ export class ApiYoutubeComponent implements OnInit {
         });
       });
   }
-
-
 
 }
