@@ -40,12 +40,7 @@ export class ApiYoutubeVideoComponent implements OnInit {
 
   post(idVideo: string, type: string){
     console.log(idVideo);
-    let args = {
-      clientId: '238523767005-90jndv6p8oot3la91kv9u7kg9b3kaj2i.apps.googleusercontent.com',
-      discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'],
-      scope: 'https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube.readonly',
-      apiKey: "AIzaSyBvWTAjNGrTkCqKBwryv4LX4HkED7ia6ho"
-    }
+
     this.authYoutube.getGoogleApiService().subscribe(() => {
 
       //  on load auth2 client
@@ -53,7 +48,7 @@ export class ApiYoutubeVideoComponent implements OnInit {
         callback: function () {
 
           // On initialise gapi.client
-          gapi.client.init(args).then(
+          gapi.client.init(this.authYoutube.args).then(
             (value ) => {
             },
             (reason ) => {
@@ -73,12 +68,22 @@ export class ApiYoutubeVideoComponent implements OnInit {
             gapi.client.setApiKey(AuthYoutubeService.SESSION_STORAGE_KEY);
             gapi.client.request(data).then(
               (response) => {
-              alert('Vous avez aimez cette vidéo :' + response);
-
+              if(type == 'like'){
+                alert('Vous avez like la vidéo');
+              }
+              else{
+                alert('Vous avez dislike la vidéo');
+              }
 
             },
             (reason) => {
-              alert('Erreur lors du like, veuillez réessayer');
+              if(type == 'like'){
+                alert('Erreur lors du like');
+                
+              }
+              else{
+                alert('Erreur lors du dislike ');
+              }
               return reason;
             });
           }
