@@ -12,7 +12,6 @@ export class MenuComponent implements OnInit {
 
 
   private user: GoogleUser;
-  private userLogged = false;
   imagesrc = "../../assets/pictures/logo WC Menu.png";
   imgSymfony = "../../assets/pictures/symfonyMobile.png";
   imgUXUI = "../../assets/pictures/uxuiMobile.png";
