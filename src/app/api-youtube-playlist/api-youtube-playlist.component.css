@@ -1,7 +1,114 @@
-.delete {
-    cursor: pointer;
-    padding-right: 20%;
+@font-face {
+    font-family: "KeepCalm";
+    src: url("/assets/fonts/KeepCalm-Medium.ttf");
 }
-.edit{
-    cursor: pointer;
+
+@font-face {
+    font-family: "Roboto";
+    src: url("/assets/fonts/Roboto-Light.ttf");
+}
+
+
+
+@media (min-width: 376px) {
+
+    .mobileFirst{
+        display: none;
+    }
+
+    .delete {
+        cursor: pointer;
+    }
+    .edit{
+        cursor: pointer;
+    }
+    h1{
+        margin: 25px;
+        font-family: Roboto;
+    }
+    
+    .card-header{
+        display:flex;
+        flex-direction: column;
+    }
+    
+    .delEditPlaylist{
+        display: flex;
+        align-items: center;
+        border-style: solid;
+        justify-content: space-around;
+        border-width: 1px 0px 0px 0px;
+        border-color: #313131;
+        height: 60px;
+    }
+    
+    .titlePlaylist{
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 12px;
+        font-family: Roboto;
+    }
+    
+    .col-3{
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .mobileFirst{
+        margin-top: 100px;
+    }
+
+    .pcFirst{
+        display: none;
+    }
+
+    .delete {
+        cursor: pointer;
+    }
+    .edit{
+        cursor: pointer;
+    }
+    h1{
+        display: flex;
+        justify-content: center;
+        margin: 25px;
+        font-family: Roboto;
+        font-size: 32px;
+    }
+    
+    .card-header{
+        display:flex;
+        flex-direction: column;
+    }
+    
+    .delEditPlaylist{
+        display: flex;
+        align-items: center;
+        border-style: solid;
+        justify-content: space-around;
+        border-width: 1px 0px 0px 0px;
+        border-color: #313131;
+        height: 60px;
+    }
+    
+    .titlePlaylist{
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 12px;
+        font-family: Roboto;
+    }
+    
+    .col-12{
+        margin-bottom: 25px;
+    }
+
+    .material-icons{
+        font-size:40px;
+        padding-top: 17px;
+
+    }
 }

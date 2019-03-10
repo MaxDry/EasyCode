@@ -1,4 +1,24 @@
-.textExplication {
-    font-size: 20px;
-    padding: 2%;
+
+@media (min-width: 376px) {
+
+    .mobileFirst{
+        display: none;
+    }
+
+    .textExplication {
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 375px) {
+
+    .pcFirst{
+        display: none;
+    }
+
+    .textExplication {
+        font-size: 20px;
+        padding:28% 2%
+    }
 }

@@ -10,6 +10,7 @@
         height : 100%;
         max-width: 75%;
         background-color: rgb(233, 233, 233);
+        min-height: 789px;
     }
 
     .footer {
@@ -35,6 +36,7 @@
         height : 100%;
         max-width: 100%;
         background-color: rgb(233, 233, 233);
+        min-height: 581px
     }
 
     .footer {
