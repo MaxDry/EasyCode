@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
-
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { AngularComponent } from './angular/angular.component';
@@ -15,6 +14,7 @@ import { ApiYoutubeComponent } from './api-youtube/api-youtube.component';
 import { ApiYoutubeVideoComponent } from './api-youtube-video/api-youtube-video.component';
 import { SingleVideoYoutubeComponent } from './single-video-youtube/single-video-youtube.component';
 import { FooterComponent } from './footer/footer.component';
+import { FormsModule } from '@angular/forms';
 import {
   GoogleApiModule, 
   GoogleApiService, 
@@ -26,6 +26,7 @@ import {
 import { ApiYoutubePlaylistComponent } from './api-youtube-playlist/api-youtube-playlist.component';
 
 import { HttpErrorInterceptor } from './http-erreur.intercepteur.service';
+import { UpdatePlaylistComponent } from './update-playlist/update-playlist.component';
 
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "871157582032-n07vpulrmradumcoo4anvbnom7a6u6vo.apps.googleusercontent.com",
@@ -45,6 +46,8 @@ const appRoutes: Routes = [
   { path: 'integration', component: IntegrationComponent},
   { path: 'playlists', component: ApiYoutubePlaylistComponent},
   { path: 'video/:id', component: SingleVideoYoutubeComponent},
+  { path: 'update-playlist/:id', component: UpdatePlaylistComponent},
+  
 ]
 
 @NgModule({
@@ -62,10 +65,14 @@ const appRoutes: Routes = [
     SingleVideoYoutubeComponent,
     FooterComponent,
     ApiYoutubePlaylistComponent,
+
+    UpdatePlaylistComponent
+
     NavbarComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     GoogleApiModule.forRoot({
       provide: NG_GAPI_CONFIG
@@ -73,7 +80,6 @@ const appRoutes: Routes = [
     }),
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true }
     )
   ],
   providers: [],

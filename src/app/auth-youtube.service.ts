@@ -24,7 +24,7 @@ export class AuthYoutubeService {
   constructor(private googleAuth: GoogleAuthService, private router: Router, private GoogleApi: GoogleApiService, private http: HttpClient) { }
 
   public signIn(): Observable<object> {
-    // On charge la librairie GoogleAuth 
+    // get GoogleAuth 
     return this.googleAuth.getAuth();
   }
 
@@ -35,12 +35,11 @@ export class AuthYoutubeService {
   }
 
   public getGoogleApiService(): Observable<void> {
-    // console.log("loading gapi");
-    // On charge la librairie GoogleApi
+    // loading GoogleApi
     return this.GoogleApi.onLoad();
   }
 
-
+// set session of GoogleUser
   public signInSuccess(response: GoogleUser) {
     this.user = response;
     sessionStorage.setItem(
@@ -50,6 +49,14 @@ export class AuthYoutubeService {
 
   public getUser() {
     return this.user;
+  }
+
+  public getToken(): string {
+    let token: string = sessionStorage.getItem(AuthYoutubeService.SESSION_STORAGE_KEY);
+    if (!token) {
+      throw new Error("Authentification requise!");
+    }
+    return sessionStorage.getItem(AuthYoutubeService.SESSION_STORAGE_KEY);
   }
 
   public isSignedIn() {

@@ -9,6 +9,7 @@ import { Router } from "@angular/router"
 })
 export class ApiYoutubePlaylistComponent implements OnInit {
   playlists;
+  displayForm = false;
   constructor(private router: Router, private authYoutube: AuthYoutubeService) { }
 
   ngOnInit() {
@@ -20,11 +21,11 @@ export class ApiYoutubePlaylistComponent implements OnInit {
 
     let that = this;  
 
-      //  chargement librairie gapi.client
+      //  loading library client OAuth
       gapi.load('client:auth2', {
         callback: function () {
 
-          // On initialise gapi.client
+          // initializing client Google api with attribute "args" in authYoutubeService
           gapi.client.init(that.authYoutube.args).then(
             (value) => {
               console.log(value)
@@ -33,18 +34,20 @@ export class ApiYoutubePlaylistComponent implements OnInit {
               console.log(reason)
             }
           );
+          // set arguments for the request, only path is required
           if (gapi.client != undefined) {
-            console.log("Gapi has loaded !");
             var data = {
               path: "https://www.googleapis.com/youtube/v3/playlists",
               method: "GET",
               params: {
                 part: "snippet, contentDetails",
                 mine: true,
-                maxResults: 25
+                maxResults: 50
               }
             }
+            // set  client token(key) to access at gapi 
             gapi.client.setApiKey(AuthYoutubeService.SESSION_STORAGE_KEY);
+            //launch request
             gapi.client.request(data).then((response) => {
 
               that.playlists = response["result"]["items"];
@@ -72,6 +75,7 @@ export class ApiYoutubePlaylistComponent implements OnInit {
 
   }
   deletePlaylist(idPlaylist: string){
+    console.log(idPlaylist);
     if (confirm("Êtes vous sûr de vouloir supprimer cette playlist ?")) {
       this.delete(idPlaylist);
 
@@ -81,11 +85,11 @@ export class ApiYoutubePlaylistComponent implements OnInit {
     this.authYoutube.getGoogleApiService().subscribe(() => {
 
       let that = this;
-      //  on charge auth2 client
+      //  loading library client OAuth
       gapi.load('client:auth2', {
         callback: function () {
 
-          // On initialise gapi.client
+          // initializing client Google api with attribute "args" in authYoutubeService
           gapi.client.init(that.authYoutube.args).then(
             (value) => {
               console.log(value)
@@ -94,20 +98,24 @@ export class ApiYoutubePlaylistComponent implements OnInit {
               console.log(reason)
             }
           );
+          // set arguments for the request, only path is required
           if (gapi.client != undefined) {
             console.log("Gapi has loaded !");
             var data = {
-              path: "https://www.googleapis.com/youtube/v3/playlist",
+              path: "https://www.googleapis.com/youtube/v3/playlists",
               method: "DELETE",
               params: {
                 id: idPlaylist
               }
             }
+            // set  client token(key) to access at gapi 
             gapi.client.setApiKey(AuthYoutubeService.SESSION_STORAGE_KEY);
+
+            //launch request
             gapi.client.request(data).then((response) => {
               console.log(response);
               alert('Playlist supprimé');
-
+              document.getElementById("playlists").click();
             },
               (reason) => {
                 return reason;
@@ -117,15 +125,19 @@ export class ApiYoutubePlaylistComponent implements OnInit {
         },
         onerror: function () {
           // Handle loading error.
-          alert('gapi.client failed to load!');
+          alert('GoogleApi a renvoyée une erreur, veuillez reessayer plus tard');
         },
-        timeout: 5000, 
+        timeout: 7000, 
         ontimeout: function () {
           // Handle timeout.
-          alert('gapi.client could not load in a timely manner!');
+          alert('GoogleApi a mit trop de temps pour se charger, veuillez reessayer plus tard ou vérifier votre connexion internet');
         }
       });
     });
+  }
+  editPlaylist(playlist: any) {
+    this.displayForm = true;
+    this.router.navigateByUrl("update-playlist/" + playlist);
   }
 
 }
