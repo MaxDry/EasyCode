@@ -54,8 +54,8 @@
       -->
 
         <ul id="menu">
-          <a routerLink="/symfony" routerLinkActive="active"><li class="mobileWC">WatchCode</li></a>
-          <a routerLink="/symfony" routerLinkActive="active"><li><img class="imgMenuMobile" [src]="imgSymfony">Symfony</li></a>
+          <a routerLink="/" routerLinkActive="active"><li class="mobileWC">WatchCode</li></a>
+          <a routerLink="/symfony" routerLinkActive="active" ><li><img class="imgMenuMobile" [src]="imgSymfony">Symfony</li></a>
           <a routerLink="/angular" routerLinkActive="active"><li><img class="imgMenuMobile" [src]="imgAngular">Angular</li></a>
           <a routerLink="/designUXUI" routerLinkActive="active"><li><img class="imgMenuMobile" [src]="imgUXUI">Design UX/UI</li></a>
           <a routerLink="/gestionDeProjet" routerLinkActive="active"><li><img class="imgMenuMobile" [src]="imgGestion">Gestion de projet</li></a>
@@ -63,7 +63,18 @@
           <a routerLink="/playlists" routerLinkActive="active" *ngIf='isLogged()'><li><img class="imgMenuMobile" [src]="imgPlaylists" >Playlists</li></a>
         </ul>
     </div>
+    
   </nav>
+  <div class="connected" *ngIf="isLogged()">
+    <li class="nav-item dropdown">
+        <a class="nav-link" href="#" id="dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img class="imgUser"[src]="user.w3.Paa">
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdown">
+          <a class="nav-link" href="#" (click)="disconnect()">Déconnexion</a>
+        </div>
+    </li>
+  </div>
   <span class="mobileConnect" id="icon" (click)="signIn()" *ngIf="!isLogged()">Se connecter</span>
 </header>
 
