@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthYoutubeService } from './../auth-youtube.service';
 import { Router } from "@angular/router"
-
+import GoogleUser = gapi.auth2.GoogleUser;
 @Component({
   selector: 'app-api-youtube-playlist',
   templateUrl: './api-youtube-playlist.component.html',
@@ -10,6 +10,7 @@ import { Router } from "@angular/router"
 export class ApiYoutubePlaylistComponent implements OnInit {
   playlists;
   displayForm = false;
+  private user: GoogleUser;
   constructor(private router: Router, private authYoutube: AuthYoutubeService) { }
 
   ngOnInit() {
@@ -51,8 +52,7 @@ export class ApiYoutubePlaylistComponent implements OnInit {
             gapi.client.request(data).then((response) => {
 
               that.playlists = response["result"]["items"];
-              console.log(that.playlists);
-              document.getElementById("playlists").click();
+              
               
             },
               (reason) => {
@@ -75,7 +75,6 @@ export class ApiYoutubePlaylistComponent implements OnInit {
 
   }
   deletePlaylist(idPlaylist: string){
-    console.log(idPlaylist);
     if (confirm("Êtes vous sûr de vouloir supprimer cette playlist ?")) {
       this.delete(idPlaylist);
 
@@ -135,9 +134,12 @@ export class ApiYoutubePlaylistComponent implements OnInit {
       });
     });
   }
-  editPlaylist(playlist: any) {
+  editPlaylist(playlistId: any) {
     this.displayForm = true;
-    this.router.navigateByUrl("update-playlist/" + playlist);
+    this.router.navigateByUrl("update-playlist/" + playlistId);
   }
-
+  isLogged(){
+    this.user = this.authYoutube.getUser();
+    return this.authYoutube.isSignedIn();
+  }
 }

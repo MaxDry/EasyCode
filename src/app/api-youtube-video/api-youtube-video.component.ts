@@ -36,7 +36,6 @@ export class ApiYoutubeVideoComponent implements OnInit {
       .subscribe((response: Array<Object>) => {
         this.videos = response["items"];
         // this.idVid= "/video/" + response["items"]["id"]["videoId"]; 
-      // console.log(this.videos)
       });
   }
   isPosted(idVideo: string, type: string)
