@@ -7,6 +7,17 @@
 
     .textExplication {
         font-size: 20px;
+        margin: 0px 4%;
+    }
+
+    .logo{
+        height: 200px;
+        margin: 60px 0px;
+    }
+
+    .leLogo{
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -19,6 +30,15 @@
 
     .textExplication {
         font-size: 20px;
-        padding:28% 2%
+    }
+
+    .logo{
+        height: 70px;
+        margin: 122px 0px 35px 0px;
+    }
+
+    .leLogo{
+        display: flex;
+        justify-content: center;
     }
 }

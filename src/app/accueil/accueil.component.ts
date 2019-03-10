@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccueilComponent implements OnInit {
 
+  imageLogo = "../../assets/pictures/logo WC Menu.png";
+
   constructor() { }
 
   ngOnInit() {

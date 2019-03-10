@@ -2,12 +2,16 @@ section {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 6%;
     
 }
 
 section img {
     max-height: 150px;
+    margin: 3% 3%;
+}
+
+.explications{
+    margin: 3% 4%;
 }
 
 .textExplication {
