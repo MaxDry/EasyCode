@@ -25,13 +25,16 @@ export class ApiYoutubeComponent implements OnInit {
   next = "";
   previous = "";
   public videos = [];
+  isLoaded = false;
+  argLoader = "";
   
   constructor(private authYoutube: AuthYoutubeService,private route: ActivatedRoute, private http: HttpClient, private sanitizer: DomSanitizer) { }
 
+
     ngOnInit() {
-    
   
     if(this.searchVideo !== null){
+
       this.getVideos(this.searchVideo);
       this.search = this.searchVideo;
       
@@ -52,8 +55,12 @@ export class ApiYoutubeComponent implements OnInit {
         this.videos.forEach(element => {
           this.videoUrl = 'http://www.youtube.com/embed/' + element["id"]["videoId"] + '?enablejsapi=1&origin=http://example.com&rel=1';
           element['urlSecure'] = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoUrl);
-        });
-      });
+          this.isLoaded = true;
+        }
+        
+        );
+      }
+      );
   }
   // NextPage thanks to nextPageToken
   getVideosNext(){
