@@ -1,0 +1,22 @@
+
+<h3>Modification de la playlist : </h3>
+  <!-- <div *ngFor="let playlist of playlistToUpdate"> -->
+    <form id="FormUpdatePlaylist" class="form-group" > 
+      <label for="title">Titre de la playlist :</label><br>
+      <input type="text" placeholder="Titre" name="inputTitle" id="inputTitle" [(ngModel)]="title" class="col-4"><br>
+      <label for="description">Description de la playlist :</label><br>
+      <textarea class="form-control" rows="5" placeholder="Description" name="description" id="inputDescription" [(ngModel)]="inputDescription" class="col-6"></textarea><br>
+      <label for="tags">Tags de la playlist :</label><br>
+      <input type="text" placeholder="Tags" rows="3" name="tags" id="tags" [(ngModel)]="tags" class="col-6"><br>
+      <label for="status">Statut de la playlist:</label><br>
+      <select name="dropdownStatus" id="selectStatus" [(ngModel)]="status">
+        <option value = "private" >Privée</option>
+        <option value = "public" selected="selected">Public</option>
+        <option value = "nonRep">Non répertoriée</option>
+      </select>
+      
+    </form>
+    <button class="btn btn-success" (click)="updatePlaylist()">Modifier</button>
+    <button class="btn btn-danger" routerLink="/playlists"  routerLinkActive="active">Retour</button>
+
+  <!-- </div> -->

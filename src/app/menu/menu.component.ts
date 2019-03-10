@@ -17,6 +17,7 @@ export class MenuComponent implements OnInit {
   constructor(private authYoutube: AuthYoutubeService, private router: Router) { }
 
   ngOnInit() {
+    this.authYoutube.getToken();
   }
 
   signIn(){
@@ -26,7 +27,6 @@ export class MenuComponent implements OnInit {
       auth.signIn().then(response => {
           this.authYoutube.signInSuccess(response);
           this.user = response;
-          console.log(this.user)
           if(response != undefined){
             document.getElementById("symfony").click();
             
@@ -34,6 +34,7 @@ export class MenuComponent implements OnInit {
         }
         );
     });
+    
   }
 
   disconnect(){

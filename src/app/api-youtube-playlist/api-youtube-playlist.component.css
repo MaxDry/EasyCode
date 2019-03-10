@@ -1,3 +1,7 @@
-.delete{
+.delete {
+    cursor: pointer;
+    padding-right: 20%;
+}
+.edit{
     cursor: pointer;
 }

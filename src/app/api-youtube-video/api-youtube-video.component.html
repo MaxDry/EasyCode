@@ -4,10 +4,19 @@
       <div class="counter">
           <span>{{ video.statistics.viewCount }} vues</span>
         
-        <button type="button" *ngIf='isLogged()' class="btn btn-success" (click)="post(video.id, 'like')">{{ video.statistics.likeCount }} like(s)</button>
-        <button type="button" *ngIf='isLogged()' class="btn btn-danger" (click)="post(video.id, 'dislike')">{{ video.statistics.dislikeCount }} dislike(s)</button>      
+          <div class="inactif" *ngIf='!isPosted()'>
+            <button type="button" *ngIf='isLogged()' class="btn btn-success"  (click)="post(video.id, 'like')">{{ video.statistics.likeCount }} like(s)</button>
+            <button type="button" *ngIf='isLogged()' class="btn btn-danger"  (click)="post(video.id, 'dislike')">{{ video.statistics.dislikeCount }} dislike(s)</button>          
+          </div>
+          <!-- <div class="inactif" *ngIf='isPosted()'>
+            <button type="button" *ngIf='isLogged()' class="btn btn-success" (click)="post(video.id, 'like')">{{ video.statistics.likeCount }} like(s)</button>
+            <button type="button" *ngIf='isLogged()' class="btn btn-danger" (click)="post(video.id, 'dislike')">{{ video.statistics.dislikeCount }} dislike(s)</button>          
+          </div> -->
+
+          <div>
+            <h5 class="card-title">{{ video.snippet.title }}</h5>
+              <p class="card-text">{{ video.snippet.description }}</p>
+          </div>
       </div>
-      <h5 class="card-title">{{ video.snippet.title }}</h5>
-        <p class="card-text">{{ video.snippet.description }}</p>
-    </div>
+      
   </div>
