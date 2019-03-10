@@ -27,6 +27,7 @@ import { ApiYoutubePlaylistComponent } from './api-youtube-playlist/api-youtube-
 
 import { HttpErrorInterceptor } from './http-erreur.intercepteur.service';
 import { UpdatePlaylistComponent } from './update-playlist/update-playlist.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "871157582032-n07vpulrmradumcoo4anvbnom7a6u6vo.apps.googleusercontent.com",
@@ -65,18 +66,16 @@ const appRoutes: Routes = [
     SingleVideoYoutubeComponent,
     FooterComponent,
     ApiYoutubePlaylistComponent,
-
-    UpdatePlaylistComponent
-
-    NavbarComponent
+    UpdatePlaylistComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     GoogleApiModule.forRoot({
-      provide: NG_GAPI_CONFIG
-      useValue: gapiClientConfig
+      provide: NG_GAPI_CONFIG,
+      useValue: gapiClientConfig,
     }),
     RouterModule.forRoot(
       appRoutes,
