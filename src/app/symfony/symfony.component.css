@@ -2,7 +2,7 @@ section {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 4%;
+    padding: 6%;
     
 }
 
@@ -14,9 +14,10 @@ section img {
     font-size: 20px;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 375px) {
     section img {
         max-height: 50px;
+        margin-top: 90px;
     }
 
     .textExplication {

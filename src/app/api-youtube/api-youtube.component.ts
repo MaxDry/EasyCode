@@ -25,14 +25,32 @@ export class ApiYoutubeComponent implements OnInit {
   next = "";
   previous = "";
   public videos = [];
+  isLoaded = false;
+  argLoader = "";
   
-  constructor(private route: ActivatedRoute, private http: HttpClient, private sanitizer: DomSanitizer) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient, private sanitizer: DomSanitizer, private authYoutube: AuthYoutubeService) { }
 
     ngOnInit() {
-    // S'il y a un parametre de création de composant
-    
+
+      
     if(this.searchVideo !== null){
-      // on cherche les vidéos du sujet et ensuite on assigne la recherche au thème du parametre
+
+
+    //   const response = this.getVideos;
+    // response.subscribe(
+    //   () => {
+    //     this.isLoaded = true;
+    //     console.log('oklm');
+    //   },
+    //   error => {
+    //     console.log(error);
+    //   },
+    //   () => {
+    //     console.log('on complete');
+    //   }
+
+    // )
+
       this.getVideos(this.searchVideo);
       this.search = this.searchVideo;
       
@@ -49,11 +67,16 @@ export class ApiYoutubeComponent implements OnInit {
         this.videos = response["items"];
         this.next = response["nextPageToken"];
         
+        
         this.videos.forEach(element => {
           this.videoUrl = 'http://www.youtube.com/embed/' + element["id"]["videoId"] + '?enablejsapi=1&origin=http://example.com&rel=1';
           element['urlSecure'] = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoUrl);
-        });
-      });
+          this.isLoaded = true;
+        }
+        
+        );
+      }
+      );
   }
   getVideosNext(){
     this.http.get("https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + this.search + "&type=video&videoCaption=any&key="+ this.myApiKey + "&maxResults=6&pageToken=" + this.next)

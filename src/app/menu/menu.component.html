@@ -54,17 +54,17 @@
       -->
 
         <ul id="menu">
-          <a routerLink="/symfony" routerLinkActive="active"><li>Symfony</li></a>
-          <a routerLink="/angular" routerLinkActive="active"><li>Angular</li></a>
-          <a routerLink="/designUXUI" routerLinkActive="active"><li>Design UX/UI</li></a>
-          <a routerLink="/gestionDeProjet" routerLinkActive="active"><li>Gestion de projet</li></a>
-          <a routerLink="/integration" routerLinkActive="active"><li>Intégration</li></a>
-          <a routerLink="/playlists" routerLinkActive="active"><li>Playlists</li></a>
+          <a routerLink="/symfony" routerLinkActive="active"><li class="mobileWC">WatchCode</li></a>
+          <a routerLink="/symfony" routerLinkActive="active"><li><img class="imgMenuMobile" [src]="imgSymfony">Symfony</li></a>
+          <a routerLink="/angular" routerLinkActive="active"><li><img class="imgMenuMobile" [src]="imgAngular">Angular</li></a>
+          <a routerLink="/designUXUI" routerLinkActive="active"><li><img class="imgMenuMobile" [src]="imgUXUI">Design UX/UI</li></a>
+          <a routerLink="/gestionDeProjet" routerLinkActive="active"><li><img class="imgMenuMobile" [src]="imgGestion">Gestion de projet</li></a>
+          <a routerLink="/integration" routerLinkActive="active"><li><img class="imgMenuMobile" [src]="imgIntegration">Intégration</li></a>
+          <a routerLink="/playlists" routerLinkActive="active" *ngIf='isLogged()'><li><img class="imgMenuMobile" [src]="imgPlaylists" >Playlists</li></a>
         </ul>
     </div>
   </nav>
-    
-  <i class="fas fa-door-open fa-2x" id="icon" (click)="signIn()" *ngIf="!isLogged()"></i>
+  <span class="mobileConnect" id="icon" (click)="signIn()" *ngIf="!isLogged()">Se connecter</span>
 </header>
 
 

@@ -14,6 +14,12 @@ export class MenuComponent implements OnInit {
   private user: GoogleUser;
   private userLogged = false;
   imagesrc = "../../assets/pictures/logo WC Menu.png";
+  imgSymfony = "../../assets/pictures/symfonyMobile.png";
+  imgUXUI = "../../assets/pictures/uxuiMobile.png";
+  imgAngular = "../../assets/pictures/angularMobile.png";
+  imgGestion = "../../assets/pictures/gestionMobile.png";
+  imgIntegration = "../../assets/pictures/integrationMobile.png";
+  imgPlaylists = "../../assets/pictures/playlistMobile.png";
 
   constructor(private authYoutube: AuthYoutubeService, private router: Router) { }
 
