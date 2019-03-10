@@ -14,9 +14,15 @@ export class ApiYoutubePlaylistComponent implements OnInit {
   constructor(private router: Router, private authYoutube: AuthYoutubeService) { }
 
   ngOnInit() {
+    
     this.getPlaylists();
+    setTimeout(this.reload,500);
+    setTimeout(this.reload,1000);
+    
   }
-
+  reload(){
+    document.getElementById("playlists").click();
+  }
   getPlaylists() {
     this.authYoutube.getGoogleApiService().subscribe(() => {
 
@@ -126,7 +132,7 @@ export class ApiYoutubePlaylistComponent implements OnInit {
           // Handle loading error.
           alert('GoogleApi a renvoyée une erreur, veuillez reessayer plus tard');
         },
-        timeout: 7000, 
+        timeout: 6000, 
         ontimeout: function () {
           // Handle timeout.
           alert('GoogleApi a mit trop de temps pour se charger, veuillez reessayer plus tard ou vérifier votre connexion internet');

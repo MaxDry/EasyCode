@@ -16,7 +16,7 @@ export class UpdatePlaylistComponent implements OnInit {
   playlistToUpdate;
   title: string;
   description: string;
-  status: number;
+  status: string;
   tags: string;
   select;
   choice: string;
@@ -68,7 +68,7 @@ initForm(){
 
               that.playlistForm = response["result"]["items"];
               
-            console.log(that.playlistForm);
+            
               // document.getElementById("playlists").click();
               
 
@@ -93,28 +93,16 @@ initForm(){
   
     }
 
-    getFormValue(){
-      // if(<HTMLInputElement>document.getElementById("title")).value = undefined)
-      // this.title = (<HTMLInputElement>document.getElementById("title")).value;
-      // this.description = (<HTMLInputElement>document.getElementById("description")).value;
-      // this.tags = (<HTMLInputElement>document.getElementById("tags")).value;
-      // if()
-      // this.select = document.getElementById("status");
-      // this.choice = this.select.selectedIndex;
-      // this.status = this.select.options[this.choice].value;
-      // return this.title, this.description, this.tags, this.status;
-      
-    }
 
     updatePlaylist(){
-      // this.playlistToUpdate = this.initForm();
-      this.getFormValue();
       this.playlistToUpdate = this.playlistForm[0];
-      console.log(this.playlistToUpdate);
-      console.log()
-      if(this.title == undefined && (this.status == undefined || this.status == 0)){
-        alert("Veuillez remplir le titre et le statut");
+      if(this.title == undefined ){
+        alert("Veuillez remplir le titre ");
       }
+      else{
+        this.status == 'public';
+      
+
         this.authYoutube.getGoogleApiService().subscribe(() => {
   
           let that = this;
@@ -151,6 +139,7 @@ initForm(){
                     }
                   }
                 }
+              
                 // set client token(key) to access at gapi 
                 gapi.client.setApiKey(AuthYoutubeService.SESSION_STORAGE_KEY);
                // launch request
@@ -161,10 +150,12 @@ initForm(){
                   }else{
                     alert('Playlist modifiée avec succès')
                     document.getElementById("playlists").click();
+                    document.getElementById("playlists").click();
                   }
                 })
+                
               }
-    
+            
             },
             onerror: function () {
               // Handle loading error.
@@ -177,6 +168,8 @@ initForm(){
             }
           });
         });
+        
       }
-  
+      }
+    
 }

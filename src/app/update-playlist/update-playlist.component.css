@@ -1,0 +1,36 @@
+@media (max-width: 375px) {
+    .form{
+        display: none;
+    }
+    .form-mobile{
+     padding-top: 25%;
+     line-height: 2em;
+     
+    }
+    .button{
+        padding-top: 10%;
+        text-align: center;
+    }
+    h1{
+        text-align: center;
+    }
+}
+@media (min-width: 376px) {
+    .form-mobile{
+        
+        display: none;
+    }
+    .form{
+        padding-top: 3%;
+        height: 764px;
+        display: flex;
+        justify-content: center;
+    }
+    .button{
+        padding-top: 5%;
+    }
+    h1{
+       padding-bottom: 2%;
+    }
+    
+}
