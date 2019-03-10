@@ -9,3 +9,14 @@ section {
 section img {
     max-height: 230px;
 }
+
+@media (max-width: 375px) {
+    section img {
+        max-height: 100px;
+        margin-top: 90px;
+    }
+
+    .textExplication {
+        font-size: 15px;
+    }
+}

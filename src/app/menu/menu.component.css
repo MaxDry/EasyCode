@@ -3,7 +3,7 @@
     src: url("/assets/fonts/Roboto-Light.ttf");
 }
 
-@media (min-width: 361px) {
+@media (min-width: 376px) {
 
 
     header{
@@ -89,7 +89,7 @@
 
 }
 
-@media (max-width: 360px) {
+@media (max-width: 375px) {
 
 a
 {
@@ -210,13 +210,12 @@ header{
 #menu
 {
   position: absolute;
-  width: 500px;
-  margin: -80px 0 0 -140px;
-  padding: 50px;
-  padding-top: 125px;
-  padding-bottom: 240px;
+  width: 280px;
+  margin: -80px 0 0 -36px;
+  padding: 100px 35px 400px 35px;
   display:flex;
   flex-direction: column;
+  align-items: baseline;
   
   background: rgb(138, 24, 24);
   list-style-type: none;
@@ -232,7 +231,26 @@ header{
 #menu li
 {
   padding: 10px 0;
-  font-size: 22px;
+  font-size: 18px;
+}
+
+a:nth-child(2) {
+    border-top-width: 1px;
+    border-top-color: rgb(255, 255, 255);
+    border-top-style: solid;
+    width: 100%;
+    padding-top: 10px;
+
+}
+
+a:first-child{
+    padding-bottom: 15px;
+    align-self: center;
+}
+
+.mobileWC{
+    align-self: center;
+    font-size: 24px !important;
 }
 
 /*
@@ -249,12 +267,20 @@ header{
         display: none;
     }
 
+
+    .mobileConnect{
+        font-family: "Roboto";
+        color: white;
+    }
+
     header{
         width: 100%;
-        padding: 20px 0;
+        position: fixed;
+        z-index: 2;
+        padding: 20px 35px;
         background-color:rgb(138, 24, 24);
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items :center;
     }
 
@@ -294,6 +320,11 @@ header{
 
     #icon{
         color: rgb(240, 240, 240);
+    }
+
+    .imgMenuMobile{
+        width: 40px;
+        margin-right: 25px;
     }
 
 header ul li {

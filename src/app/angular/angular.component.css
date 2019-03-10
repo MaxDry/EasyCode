@@ -14,3 +14,14 @@ section img {
     font-size: 20px;
     padding: 2%;
 }
+
+@media (max-width: 375px) {
+    section img {
+        max-height: 100px;
+        margin-top: 90px;
+    }
+
+    .textExplication {
+        font-size: 15px;
+    }
+}

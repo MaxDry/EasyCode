@@ -24,6 +24,7 @@ import {
   GoogleApiConfig
 } from "ng-gapi";
 import { ApiYoutubePlaylistComponent } from './api-youtube-playlist/api-youtube-playlist.component';
+
 import { HttpErrorInterceptor } from './http-erreur.intercepteur.service';
 
 let gapiClientConfig: NgGapiClientConfig = {
@@ -60,13 +61,14 @@ const appRoutes: Routes = [
     ApiYoutubeVideoComponent,
     SingleVideoYoutubeComponent,
     FooterComponent,
-    ApiYoutubePlaylistComponent
+    ApiYoutubePlaylistComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     GoogleApiModule.forRoot({
-      provide: NG_GAPI_CONFIG,
+      provide: NG_GAPI_CONFIG
       useValue: gapiClientConfig
     }),
     RouterModule.forRoot(

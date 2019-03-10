@@ -1,37 +1,97 @@
 
- <div class="searchBar">
-  <div class="input-group"> 
-    <input #search type="text" class="form-control" placeholder="Rechercher" (keyup.enter)="getVideos(search.value)" >
-    <span class="input-group-btn">
-      <button class="btn btn-default" (click)="getVideos(search.value)" type="button"><i class="fas fa-search"></i></button>
-    </span>
-  </div>
-</div> 
+  <div class = "pcFirst">
+      <div *ngIf="isLoaded;else inProgressContentPC">
+      <div class="paginationTop">
+        <button type="button" class="btn-video-Top" (click)="getVideosPrev()">Précédent</button>
+        <div class="searchBar">
+            <div class="input-group"> 
+              <input #search type="text" class="search-bar" placeholder="Search..." (keyup.enter)="getVideos(search.value)" >
+              <span class="input-group-btn">
+                <button class="searchButton" (click)="getVideos(search.value)" type="button">
+                  <i class="fas fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </div> 
+        <button type="button" class="btn-video-Top" (click)="getVideosNext()">Suivant</button>
+      </div>
+      <div class="row">
+        <div *ngFor="let video of videos" class="col-6" routerLink="/video/{{ video.id.videoId }}">
+          <div class="card">
+              <img class="card-img-top" [src]="video.snippet.thumbnails.high.url" alt="Card image cap">
+              <div class="card-header">
+                  {{ video.snippet.title }} <br><i class="material-icons">playlist_add</i>
+              </div>
+              <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                  <p>{{ video.snippet.description }}</p>
 
-
-<div class="paginationTop">
-  <button type="button" class="btn btn-light" (click)="getVideosPrev()">Précédent</button>
-  <button type="button" class="btn btn-light" (click)="getVideosNext()">Suivant</button>
-</div>
-
-<div class="row">
-  <div *ngFor="let video of videos" class="col-6" routerLink="/video/{{ video.id.videoId }}">
-    <div class="card">
-        <img class="card-img-top" [src]="video.snippet.thumbnails.high.url" alt="Card image cap">
-        <div class="card-header">
-            {{ video.snippet.title }} <br><i class="material-icons">playlist_add</i>
-        </div>
-        <div class="card-body">
-          <blockquote class="blockquote mb-0">
-            <p>{{ video.snippet.description }}</p>
-
-            <footer class="blockquote-footer">{{ video.snippet.publishedAt | date: 'dd/MM/yyyy' }}</footer>
-          </blockquote>
-        </div>
+                  <footer class="blockquote-footer">{{ video.snippet.publishedAt | date: 'dd/MM/yyyy' }}</footer>
+                </blockquote>
+              </div>
+          </div>
+      </div>
+      <div class="paginationBot">
+        <button type="button" class="btn-video-Bot" (click)="getVideosPrev()">Précédent</button>
+        <button type="button" class="btn-video-Bot" (click)="getVideosNext()">Suivant</button>
+      </div>
     </div>
-</div>
+    </div>
+  </div>  
 
- <div class="paginationBot">
-  <button type="button" class="btn btn-light" (click)="getVideosPrev()">Précédent</button>
-  <button type="button" class="btn btn-light" (click)="getVideosNext()">Suivant</button>
-</div> 
+
+  <div class = "mobileFirst">
+      <div *ngIf="isLoaded;else inProgressContentMobile">
+      <div class="searchBar">
+          <div class="input-group"> 
+            <input #search type="text" class="search-bar" placeholder="Rechercher..." (keyup.enter)="getVideos(search.value)" >
+            <span class="input-group-btn">
+              <button class="searchButton" (click)="getVideos(search.value)" type="button">
+                <i class="fas fa-search"></i>
+              </button>
+            </span>
+          </div>
+        </div> 
+      <div class="paginationTop">
+        <button type="button" class="btn-video-Top" (click)="getVideosPrev()"><i class="fas fa-angle-left fa-1x"></i></button>
+        <button type="button" class="btn-video-Top" (click)="getVideosNext()"><i class="fas fa-angle-right fa-1x"></i></button>
+      </div>
+      <div class="row">
+        <div *ngFor="let video of videos" class="col-12" routerLink="/video/{{ video.id.videoId }}">
+          <div class="card">
+              <img class="card-img-top" [src]="video.snippet.thumbnails.high.url" alt="Card image cap">
+              <div class="card-header">
+                  {{ video.snippet.title }} <br><i class="material-icons">playlist_add</i>
+              </div>
+              <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                  <p class="description">{{ video.snippet.description }}</p>
+
+                  <footer class="blockquote-footer">{{ video.snippet.publishedAt | date: 'dd/MM/yyyy' }}</footer>
+                </blockquote>
+              </div>
+          </div>
+      </div>
+
+      <div class="paginationBot">
+        <button type="button" class="btn-video-Bot" (click)="getVideosPrev()"><i class="fas fa-angle-left fa-1x"></i></button>
+        <button type="button" class="btn-video-Bot" (click)="getVideosNext()"><i class="fas fa-angle-right fa-1x"></i></button>
+      </div> 
+    </div>
+    </div>
+  </div>
+
+
+  <ng-template #inProgressContentMobile>
+    <img id="loaderPourMobile" src="https://i.pinimg.com/originals/8f/ef/08/8fef0805113e56aa6a7d44e3289a680e.gif">
+</ng-template>
+
+
+  <ng-template #inProgressContentPC>
+    <img id="loaderPourPC" src="https://i.pinimg.com/originals/8f/ef/08/8fef0805113e56aa6a7d44e3289a680e.gif">
+</ng-template>
+
+
+
+
+
