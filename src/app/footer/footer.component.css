@@ -3,15 +3,45 @@
     src: url("/assets/fonts/Roboto-Light.ttf");
 }
 
-.leFooter {
-    padding: 25px 0;
-    background-color: rgb(138, 24, 24);
+@media (min-width: 376px) {
+
+
+    #mobileFirst{
+        display: none;
+    }
+
+    .leFooter {
+        padding: 25px 0;
+        background-color: rgb(138, 24, 24);
+    }
+    
+    .text-footer{
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        color: white;
+        font-family: Roboto;
+    }
 }
 
-.text-footer{
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    color: white;
-    font-family: Roboto;
+
+@media (max-width: 375px) {
+
+    #pcFirst{
+        display: none;
+    }
+
+    .leFooter {
+        padding: 17px 0;
+        background-color: rgb(138, 24, 24);
+    }
+    
+    .text-footer{
+        font-size: 17px;
+        display: flex;
+        justify-content: center;
+        color: white;
+        font-family: Roboto;
+    }
 }
+

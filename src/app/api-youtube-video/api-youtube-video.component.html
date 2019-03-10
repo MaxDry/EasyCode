@@ -1,22 +1,65 @@
-<div class="video" *ngFor="let video of videos">
-    <div class="main">
-      <iframe class="e2e-iframe-trusted-sr" width="1100" height="600" [src]="videoUrl"></iframe>
-      <div class="counter">
-          <span>{{ video.statistics.viewCount }} vues</span>
-        
-          <div class="inactif" *ngIf='!isPosted()'>
-            <button type="button" *ngIf='isLogged()' class="btn btn-success"  (click)="post(video.id, 'like')">{{ video.statistics.likeCount }} like(s)</button>
-            <button type="button" *ngIf='isLogged()' class="btn btn-danger"  (click)="post(video.id, 'dislike')">{{ video.statistics.dislikeCount }} dislike(s)</button>          
-          </div>
-          <!-- <div class="inactif" *ngIf='isPosted()'>
-            <button type="button" *ngIf='isLogged()' class="btn btn-success" (click)="post(video.id, 'like')">{{ video.statistics.likeCount }} like(s)</button>
-            <button type="button" *ngIf='isLogged()' class="btn btn-danger" (click)="post(video.id, 'dislike')">{{ video.statistics.dislikeCount }} dislike(s)</button>          
-          </div> -->
 
-          <div>
-            <h5 class="card-title">{{ video.snippet.title }}</h5>
-              <p class="card-text">{{ video.snippet.description }}</p>
+<div class="pcFirst">
+    <div class="video" *ngFor="let video of videos">
+        <div class="main">
+            <h4 class="card-title">{{ video.snippet.title }}</h4>
+          <iframe class="e2e-iframe-trusted-sr" [src]="videoUrl"></iframe>
+          <div class="counter">
+    
+              <div >
+                <span id="titleDesc">Description :</span>
+                  
+                </div>
+            
+              <div class="LikeDislike" *ngIf='!isPosted()'>
+                <button type="button" *ngIf='isLogged()' class="btn btn-success"  (click)="post(video.id, 'like')">{{ video.statistics.likeCount }} like(s)</button>
+                <button type="button" *ngIf='isLogged()' class="btn btn-danger"  (click)="post(video.id, 'dislike')">{{ video.statistics.dislikeCount }} dislike(s)</button>          
+              </div>
+              <!-- <div class="inactif" *ngIf='isPosted()'>
+                <button type="button" *ngIf='isLogged()' class="btn btn-success" (click)="post(video.id, 'like')">{{ video.statistics.likeCount }} like(s)</button>
+                <button type="button" *ngIf='isLogged()' class="btn btn-danger" (click)="post(video.id, 'dislike')">{{ video.statistics.dislikeCount }} dislike(s)</button>          
+              </div> -->
+              <span class="vues">{{ video.statistics.viewCount }} vues</span>
           </div>
+          <div id="desc">
+              <p class="description">
+                <a class="lirelasuite" target="_blank" onclick="document.getElementById('lirelasuite').style.display = 'block'; this.style.display = 'none';">Afficher la description...</a>
+              </p>
+              <p class="card-text" id="lirelasuite">{{ video.snippet.description }}</p>
+          </div> 
       </div>
-      
-  </div>
+    </div>
+</div>
+
+<div class="mobileFirst">
+    <div class="video" *ngFor="let video of videos">
+        <div class="main">
+            <h4 class="card-title">{{ video.snippet.title }}</h4>
+          <iframe class="e2e-iframe-trusted-sr" [src]="videoUrl"></iframe>
+          <div class="LikeDislike" *ngIf='!isPosted()'>
+              <button type="button" *ngIf='isLogged()' class="btn btn-success btn-sm"  (click)="post(video.id, 'like')">{{ video.statistics.likeCount }} like(s)</button>
+              <button type="button" *ngIf='isLogged()' class="btn btn-danger btn-sm"  (click)="post(video.id, 'dislike')">{{ video.statistics.dislikeCount }} dislike(s)</button>          
+            </div>
+          <div class="counter">
+    
+              <div id="maDesc">
+                <span id="titleDesc">Description :</span>
+                  
+              </div>
+
+              <!-- <div class="inactif" *ngIf='isPosted()'>
+                <button type="button" *ngIf='isLogged()' class="btn btn-success" (click)="post(video.id, 'like')">{{ video.statistics.likeCount }} like(s)</button>
+                <button type="button" *ngIf='isLogged()' class="btn btn-danger" (click)="post(video.id, 'dislike')">{{ video.statistics.dislikeCount }} dislike(s)</button>          
+              </div> -->
+              <span class="vues">{{ video.statistics.viewCount }} vues</span>
+          </div>
+          <div id="desc">
+              <p class="description">
+                <a class="clicMobile" target="_blank" onclick="document.getElementById('descMobile').style.display = 'block'; this.style.display = 'none';">Afficher la description...</a>
+              </p>
+              <p class="card-text" id="descMobile">{{ video.snippet.description }}</p>
+          </div> 
+      </div>
+    </div>
+</div>
+
