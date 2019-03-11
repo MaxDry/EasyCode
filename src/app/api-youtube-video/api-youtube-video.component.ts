@@ -35,6 +35,7 @@ export class ApiYoutubeVideoComponent implements OnInit {
     this.http.get("https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=" + this.videoId + "&key=" + this.myApiKey)
       .subscribe((response: Array<Object>) => {
         this.videos = response["items"];
+        // console.log(this.videos);
         // this.idVid= "/video/" + response["items"]["id"]["videoId"]; 
       });
   }

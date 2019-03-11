@@ -24,11 +24,10 @@ import {
   GoogleApiConfig
 } from "ng-gapi";
 import { ApiYoutubePlaylistComponent } from './api-youtube-playlist/api-youtube-playlist.component';
-
 import { HttpErrorInterceptor } from './http-erreur.intercepteur.service';
 import { UpdatePlaylistComponent } from './update-playlist/update-playlist.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { ApiYoutubeFormUpdateComponent } from './api-youtube-form-update/api-youtube-form-update.component';
+import { ApiYoutubePlaylistItemsComponent } from './api-youtube-playlist-items/api-youtube-playlist-items.component';
+import { PlaylistItemYoutubeComponent } from './playlist-item-youtube/playlist-item-youtube.component';
 
 let gapiClientConfig: NgGapiClientConfig = {
   client_id: "871157582032-n07vpulrmradumcoo4anvbnom7a6u6vo.apps.googleusercontent.com",
@@ -49,7 +48,8 @@ const appRoutes: Routes = [
   { path: 'playlists', component: ApiYoutubePlaylistComponent},
   { path: 'video/:id', component: SingleVideoYoutubeComponent},
   { path: 'update-playlist/:id', component: UpdatePlaylistComponent},
-  
+  { path: 'playlist-items/:id', component: ApiYoutubePlaylistItemsComponent},
+  { path: 'playlist-video/:id', component: PlaylistItemYoutubeComponent},
 ]
 
 @NgModule({
@@ -68,8 +68,8 @@ const appRoutes: Routes = [
     FooterComponent,
     ApiYoutubePlaylistComponent,
     UpdatePlaylistComponent,
-    NavbarComponent,
-    ApiYoutubeFormUpdateComponent,
+    ApiYoutubePlaylistItemsComponent,
+    PlaylistItemYoutubeComponent,
   ],
   imports: [
     BrowserModule,

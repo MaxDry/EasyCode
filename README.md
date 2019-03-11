@@ -8,7 +8,9 @@
 
 WatchCode est une application Angular permettant de regrouper des videos youtube par module(Symfony 4, Angular, designUX/UI, intégration, gestion de projet), utilent pour la licence Informatique (Web & Mobile).
 Elle permet également de se connecter à son compte Google afin de gérer vos propres playlists : supression, modification, 
-affichage de vos playlists(affichage des vidéos d'une playlist à venir), ajout d'une vidéo à une  playlist (fonctionnalité à venir).
+
+affichage de vos playlists, ajout d'une vidéo à une  playlist (fonctionnalité à venir)
+
 
 
 ## Pré-requis :
@@ -35,6 +37,11 @@ Toujours dans le même terminal, veuillez éxécuter la commande : `npm install`
 Dans le même terminal, il vous suffit d'éxécuter la commande : `ng serve --o`.
 L'application se lancera automatiquement sur votre navigateur internet par défaut.
 
+
+Dans un terminale, lancez la commande  ng serve --open. Accédez à http://localhost:4200/. 
+L'application sera automatiquement rechargée si vous modifiez l'un des fichiers source.
+
+=======
 </br>
 </br>
 <img width="30px" src="https://citusmigrate.fpt-software.jp/wp-content/themes/citusmigrate/imgs/United-Kingdom-flag-icon.png">
@@ -69,4 +76,5 @@ Always in the same terminal, please run this command : `npm install`. An install
 
 In the same terminal, please run this command : `ng serve --o`.
 The application will automatically launch on your default internet browser
+
 

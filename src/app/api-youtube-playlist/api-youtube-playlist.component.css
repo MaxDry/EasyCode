@@ -16,6 +16,9 @@
         display: none;
     }
 
+    .card-img-top{
+        cursor: pointer;
+    }
     .delete {
         cursor: pointer;
     }
@@ -60,7 +63,9 @@
     .mobileFirst{
         margin-top: 100px;
     }
-
+    .card-img-top{
+        cursor: pointer;
+    }
     .pcFirst{
         display: none;
     }
