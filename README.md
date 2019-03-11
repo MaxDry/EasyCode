@@ -27,7 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 # EasyCode
 
-#WatchCode
+# WatchCode
 
 ## Descriptif :
 
@@ -61,9 +61,9 @@ Toujours dans le même terminal, veuillez éxécuter la commande : `npm install`
 Dans le même terminal, il vous suffit d'éxécuter la commande : `ng serve --o`.
 L'application se lancera automatiquement sur votre navigateur internet par défaut.
 
-#okok
-##okok
-###okok
-####okok
+# okok
+## okok
+### okok
+#### okok
 Dans un terminale, lancez la commande  ng serve --open. Accédez à http://localhost:4200/. 
 L'application sera automatiquement rechargée si vous modifiez l'un des fichiers source.
