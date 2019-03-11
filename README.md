@@ -15,8 +15,8 @@ affichage de vos playlists(affichage des vidéos d'une playlist à venir), ajout
 
 Il vous faudra tout d'abord installer 2 outils :
 
-- Installation de `git` -> [cliquer ici](https://git-scm.com/downloads).
-- Installation de `node.js` -> [cliquer ici](https://nodejs.org/en/download/).
+- Installation de `git` -> [Cliquer ici](https://git-scm.com/downloads).
+- Installation de `node.js` -> [Cliquer ici](https://nodejs.org/en/download/).
 
 ## Installation du projet :
 
@@ -50,8 +50,8 @@ view your playlists (view videos from a future playlist), add a video to a playl
 
 First of all you need to install 2 tools :
 
-- Installation of `git` -> [cliquer ici](https://git-scm.com/downloads)
-- Installation of `node.js` -> [cliquer ici](https://nodejs.org/en/download/)
+- Installation of `git` -> [Click here](https://git-scm.com/downloads)
+- Installation of `node.js` -> [Click here](https://nodejs.org/en/download/)
 
 ## Installation of the projet :
 
