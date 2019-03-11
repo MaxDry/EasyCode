@@ -1,0 +1,131 @@
+@media (min-width: 376px) {
+
+    .mobileFirst{
+        display: none;
+    }
+
+    .e2e-iframe-trusted-sr{
+        height: 610px;
+        width: 83%;
+    }
+
+    .main{
+        padding: 3%;
+        text-align: center;
+    }
+
+    
+
+    h4{
+        padding-top : 4%;
+        margin-bottom: 50px;
+        font-size: 25px;
+    }
+
+    .vues{
+        font-family: KeepCalm;
+        font-size: 20px;
+    }
+
+    .counter{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+
+    #desc{
+        display: flex;
+        align-items: flex-start;
+        margin-left: 117px;
+    }
+
+    #titleDesc{
+        font-family: KeepCalm;
+        font-size: 20px;
+    }
+
+    .LikeDislike{
+        WIDTH: 368px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 375px) {
+
+
+    .pcFirst{
+        display: none;
+    }
+
+    .main{
+        padding: 3%;
+        text-align: center;
+    }
+    
+    #descMobile {
+        display:none;
+        margin-top: 10px;
+    }
+    
+    a.clicMobile{
+        cursor: pointer;
+        font-size: 13px;
+    }
+    
+    .description{
+        text-decoration: underline;
+    }
+    
+    h4{
+          padding-top : 30%;
+        margin-bottom: 20px;
+        font-size: 15px;
+    }
+    
+    .vues{
+        font-family: KeepCalm;
+        font-size: 10px;
+    }
+    
+    .counter{
+        display: flex;
+        margin: 0px 5px;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+    
+    @media (min-height: 640px) {
+        #desc{
+            display: flex;
+            align-items: flex-start;
+            margin-left: 5px;
+        }
+    }
+
+    @media (min-height: 812px) {
+        #desc{
+            display: flex;
+            align-items: flex-start;
+            margin-left: 5px;
+            margin-bottom: 352px;
+        }
+    }
+    
+    
+    #titleDesc{
+        font-family: KeepCalm;
+        font-size: 13px;
+    }
+    
+    .LikeDislike{
+        display: flex;
+        justify-content: space-between;
+        margin: 0px 11px;
+    }
+
+    #maDesc{
+        display: flex;
+    }
+
+}

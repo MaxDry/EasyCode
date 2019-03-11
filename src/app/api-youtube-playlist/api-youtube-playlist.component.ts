@@ -9,15 +9,14 @@ import GoogleUser = gapi.auth2.GoogleUser;
 })
 export class ApiYoutubePlaylistComponent implements OnInit {
   playlists;
-  displayForm = false;
   private user: GoogleUser;
   constructor(private router: Router, private authYoutube: AuthYoutubeService) { }
 
   ngOnInit() {
     
     this.getPlaylists();
-    setTimeout(this.reload,500);
     setTimeout(this.reload,1000);
+    setTimeout(this.reload,2000);
     
   }
   reload(){
@@ -118,7 +117,6 @@ export class ApiYoutubePlaylistComponent implements OnInit {
 
             //launch request
             gapi.client.request(data).then((response) => {
-              console.log(response);
               alert('Playlist supprimé');
               document.getElementById("playlists").click();
             },
@@ -141,8 +139,10 @@ export class ApiYoutubePlaylistComponent implements OnInit {
     });
   }
   editPlaylist(playlistId: any) {
-    this.displayForm = true;
     this.router.navigateByUrl("update-playlist/" + playlistId);
+  }
+  getPlaylistItems(playlistId: any) {
+    this.router.navigateByUrl("playlist-items/" + playlistId);
   }
   isLogged(){
     this.user = this.authYoutube.getUser();

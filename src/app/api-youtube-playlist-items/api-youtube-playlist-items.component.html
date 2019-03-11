@@ -1,0 +1,38 @@
+<div class = "pcFirst">
+  <div class="row">
+    <div class="col-6" *ngFor="let item of playlistItems" routerLink="/playlist-video/{{ item.id }}">
+            <div class="card">
+                <img class="card-img-top" [src]="item.snippet.thumbnails.high.url" alt="Card image cap">
+                <div class="card-header">
+                    {{ item.snippet.title }} <br>
+                </div>
+                <div class="card-body">
+                  <blockquote class="blockquote mb-0">
+                    <p>{{ item.snippet.description }}</p>
+
+                    <footer class="blockquote-footer">{{ item.snippet.publishedAt | date: 'dd/MM/yyyy' }}</footer>
+                  </blockquote>
+                </div>
+            </div>
+          </div>
+      </div>
+</div>
+<div class = "mobileFirst">
+    <div class="row">
+      <div *ngFor="let item of playlistItems" class="col-12" routerLink="/playlist-video/{{ item.id }}">
+        <div class="card">
+            <img class="card-img-top" [src]="item.snippet.thumbnails.high.url" alt="Card image cap">
+            <div class="card-header">
+                {{ item.snippet.title }} <br>
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p class="description">{{ item.snippet.description }}</p>
+
+                <footer class="blockquote-footer">{{ item.snippet.publishedAt | date: 'dd/MM/yyyy' }}</footer>
+              </blockquote>
+            </div>
+        </div>
+    </div> 
+  </div>
+</div>

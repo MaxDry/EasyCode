@@ -1,0 +1,35 @@
+<div class="pcFirst">
+    <div class="video" *ngFor="let item of items">
+        <div class="main">
+            <h4 class="card-title">{{ item.snippet.title }}</h4>
+          <iframe class="e2e-iframe-trusted-sr" [src]="videoUrl"></iframe>
+          <!-- <div class="LikeDislike" *ngIf='!isPosted()'>
+              <button type="button" *ngIf='isLogged()' class="btn btn-success btn-sm"  (click)="post(video.id, 'like')">{{ video.statistics.likeCount }} like(s)</button>
+              <button type="button" *ngIf='isLogged()' class="btn btn-danger btn-sm"  (click)="post(video.id, 'dislike')">{{ video.statistics.dislikeCount }} dislike(s)</button>          
+            </div> -->
+          <div class="counter">
+    
+
+          </div>
+      
+      </div>
+    </div>
+</div>
+
+<div class="mobileFirst">
+    <div class="video" *ngFor="let item of items">
+        <div class="main">
+            <h4 class="card-title">{{ item.snippet.title }}</h4>
+          <iframe class="e2e-iframe-trusted-sr" [src]="videoUrl"></iframe>
+          <!-- <div class="LikeDislike" *ngIf='!isPosted()'>
+              <button type="button" *ngIf='isLogged()' class="btn btn-success btn-sm"  (click)="post(video.id, 'like')">{{ video.statistics.likeCount }} like(s)</button>
+              <button type="button" *ngIf='isLogged()' class="btn btn-danger btn-sm"  (click)="post(video.id, 'dislike')">{{ video.statistics.dislikeCount }} dislike(s)</button>          
+            </div> -->
+          <div class="counter">
+    
+       
+          </div>
+      </div>
+    </div>
+</div>
+
